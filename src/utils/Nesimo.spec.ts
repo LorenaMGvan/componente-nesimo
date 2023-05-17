@@ -1,11 +1,5 @@
 const {Nesimo} = require('./Nesimo');
 
-afterEach(() => {
-    // restore replaced property
-    jest.restoreAllMocks();
-  });
-
-
 describe('Test de Números Primos', () => {
     it('El 1 termino enesimo de los nùmeros Primos es 2', () => {
         const item = new Nesimo(1);

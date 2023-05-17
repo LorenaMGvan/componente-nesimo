@@ -9,7 +9,7 @@ export class Nesimo {
     }
 
     items='';
-    arrItems;
+    arrItems=[];
   
     get getNesimoMultiplo() {
         return this.calcMultiplos3();
@@ -23,9 +23,10 @@ export class Nesimo {
     al dividirlos por cualquier otro número, el resultado no es entero
     */
     calPrimo() {
-        let el = 100;
-
-        for(let numX = 2; numX <= el; numX++) {
+        let arrItems = []; 
+        let counter = 1;
+    
+        for(let numX = 2;   counter <= 100; numX++) {
             let primo = true;
 
             for(let numY=2; numY < numX; numY++) {
@@ -35,13 +36,16 @@ export class Nesimo {
                 }   
             }
 
-            if(primo) this.items += ',' + numX;
+            if(primo) {
+                this.items += ',' + numX;
+                counter++;
+            }
         }
 
         this.items = this.items.slice(1);
-        this.arrItems = this.items.split(',').map(Number);
+        arrItems = this.items.split(',').map(Number);
 
-        return this.arrItems.at(this.numUser - 1);
+        return arrItems.at(this.numUser - 1);
     }
     
 

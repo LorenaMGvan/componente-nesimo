@@ -12,7 +12,7 @@ export class ResultComponent {
 
     render() {
         return(
-            <div>
+            <div class="wrapper-result">
                 <h3>Los resultados</h3>
                 <h4>Nésimo Primo:</h4>
                 {this.resNesimoPrimo}

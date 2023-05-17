@@ -26,14 +26,16 @@ export class FormUserComponent {
     return (
       <div>
         <form onSubmit={(e) => this.handleSubmit(e)}>
-          <label>
-            Ingresa un número:
-            <input type="number"
+          <label>Ingresa un número:</label>
+          <div class="form-field">
+            <input
+              type="number"
               name="userNum"
               value={this.value}
               onInput={(event) => this.handleChange(event)} />
-          </label>
-          <input type="submit" value="Resultado" />
+            <input type="submit" value="Resultado" class="btn" />
+          </div>
+
         </form>
 
         <result-component

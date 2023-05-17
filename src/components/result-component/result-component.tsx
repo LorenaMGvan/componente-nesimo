@@ -14,11 +14,8 @@ export class ResultComponent {
         return(
             <div class="wrapper-result">
                 <h3>Los resultados</h3>
-                <h4>Nésimo Primo:</h4>
-                {this.resNesimoPrimo}
-
-                <h4>Nésimo Multiplo de 3:</h4>
-                {this.resNesimoMultiplo3}
+                <h4>Nésimo Primo: {this.resNesimoPrimo}</h4>
+                <h4>Nésimo Multiplo: {this.resNesimoMultiplo3}</h4>
             </div>
         )
       }

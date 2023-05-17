@@ -1,4 +1,4 @@
-import { Component, State, Prop, h } from '@stencil/core';
+import { Component, State, Prop, Watch ,h} from '@stencil/core';
 import { Nesimo } from '../../utils/Nesimo';
 
 @Component({
@@ -7,13 +7,21 @@ import { Nesimo } from '../../utils/Nesimo';
   shadow: true,
 })
 export class FormUserComponent {
-  @State() value: number;
+  @State() value: number = 1;
   @Prop() nesimoPrimo: number;
   @Prop() nesimoMultiplo3: number;
 
+  @Watch('value')
+  validateNum(newValue: number, _oldValue: number) {
+    const isBlank = typeof newValue !== 'number' || newValue <= 0;
+    if (isBlank) { 
+        this.value = 1;
+        // throw new Error('Debe ser mayor que 0') ;
+    };
+  }
 
   handleSubmit(e) {
-    e.preventDefault()
+    e.preventDefault();
     this.nesimoPrimo = new Nesimo(this.value).getNesimoPrimo;
     this.nesimoMultiplo3 = new Nesimo(this.value).getNesimoMultiplo;
   }

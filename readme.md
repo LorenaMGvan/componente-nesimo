@@ -1,18 +1,14 @@
-Para crear los componentes use Stencil.
-
-
 ```bash
 npm install
 npm start
 ```
 
-To build the component for production, run:
+To construir el component de production:
 
 ```bash
 npm run build
 ```
-
-To run the unit tests for the components, run:
+Para correr las pruebas
 
 ```bash
 npm test

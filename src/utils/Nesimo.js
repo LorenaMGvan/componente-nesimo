@@ -8,7 +8,7 @@ export class Nesimo {
       this.numUser = numUser;
     }
 
-    items='';
+    items='0';
     arrItems=[];
   
     get getNesimoMultiplo() {
@@ -23,7 +23,6 @@ export class Nesimo {
     al dividirlos por cualquier otro número, el resultado no es entero
     */
     calPrimo() {
-        let arrItems = []; 
         let counter = 1;
     
         for(let numX = 2;   counter <= 100; numX++) {
@@ -42,10 +41,8 @@ export class Nesimo {
             }
         }
 
-        this.items = this.items.slice(1);
-        arrItems = this.items.split(',').map(Number);
-
-        return arrItems.at(this.numUser - 1);
+        this.arrItems = this.items.split(',').map(Number);
+        return this.arrItems.at(this.numUser);
     }
     
 
@@ -71,7 +68,6 @@ export class Nesimo {
             if (x % 3 == 0) this.items += ',' + x;
         }
 
-        this.items = this.items.slice(1);
         this.arrItems = this.items.split(',');
         r = this.arrItems.at(1)-this.arrItems.at(0);
         res = a1 + ( this.numUser  - 1) * r;

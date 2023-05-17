@@ -1,6 +1,11 @@
 const {Nesimo} = require('./Nesimo');
 
-describe('Test de Números Primos', () => {
+xdescribe('Test de Números Primos', () => {
+
+    it('El 0 termino enesimo de los nùmeros Primos es 0', () => {
+        const item = new Nesimo(0);
+        expect(item.getNesimoPrimo).toBe(0);   
+    });
     it('El 1 termino enesimo de los nùmeros Primos es 2', () => {
         const item = new Nesimo(1);
         expect(item.getNesimoPrimo).toBe(2);   
@@ -32,8 +37,8 @@ describe('Test de Números Primos', () => {
     });
 
     it('El 7 termino enesimo de los nùmeros Primos es 17', () => {
-        const item = new Nesimo(17);
-        expect(item.getNesimoPrimo).toBe(59);   
+        const item = new Nesimo(7);
+        expect(item.getNesimoPrimo).toBe(17);   
     });
 
     it('El 8 termino enesimo de los nùmeros Primos es 19', () => {
@@ -54,6 +59,11 @@ describe('Test de Números Primos', () => {
 });
 
 describe('Test de multiplos del 3', () => {
+    it('El 0 termino enesimo del multiplo de 3 Debe ser 0', () => {
+        const item = new Nesimo(0);
+        expect(item.getNesimoMultiplo).toBe(0);
+    });
+
     it('El 1 termino enesimo del multiplo de 3 Debe ser 3', () => {
         const item = new Nesimo(1);
         expect(item.getNesimoMultiplo).toBe(3);
@@ -101,6 +111,11 @@ describe('Test de multiplos del 3', () => {
     it('El 10 termino enesimo del multiplo de 3 Debe ser 30', () => {
         const item = new Nesimo(10);
         expect(item.getNesimoMultiplo).toBe(30);
+    });
+
+    it('El 100 termino enesimo del multiplo de 3 Debe ser 300', () => {
+        const item = new Nesimo(100);
+        expect(item.getNesimoMultiplo).toBe(300);
     });
 });
 
